@@ -5,6 +5,8 @@ import scipy as sc
 from typing import Sequence
 
 ACTIVITIES = ["Football", "Skiing"]
+PHYSICAL_DISTANCE_THRESHOLD = 10
+SCORE_THRESHOLD = 5
 
 
 class User:
@@ -20,7 +22,10 @@ class Group:
         self.df = users
     
     def get_shared_activities(self) -> pd.DataFrame:
-        return self.df[ACTIVITIES]
+        return self.df[ACTIVITIES].any()
+
+    def get_average_activities(self):
+        return self.df.mean()
 
 
 class Users:
@@ -39,8 +44,6 @@ class Users:
 
 def get_score(user: User, group: Group):
     pass
-
-        
 
 
 def add_user(user, groups):
