@@ -27,6 +27,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+*.csv
+
 test.ipynb
 
 # PyInstaller
